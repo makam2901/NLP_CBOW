@@ -115,9 +115,19 @@ Epoch 500/500
 ```
 **Note:** The accuracy of the model increases with number of `epochs`.
  
- 
- 
- 
+### PCA
+Principal Component Analysis (PCA) is a dimension reduction tool that can be used to reduce a large set of variables to a small set that still contains most of the information in the original set.
+```
+from sklearn.decomposition import PCA
+
+pca = PCA(n_components = 2)
+final_result = pca.fit_transform(embedding)
+fig, ax = plt.subplots(1,1,figsize = (20,20))
+plt.scatter(final_result[:,0], final_result[:,1])
+for i, word in enumerate(words):
+    ax.annotate(word, xy = (final_result[i, 0], final_result[i, 1]))
+```
+
  
  
  
