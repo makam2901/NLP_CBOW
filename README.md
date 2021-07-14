@@ -94,7 +94,26 @@ y_cbow[0] =  [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 
  ```
  ### CBOW framework
  
+ ### Training 
+ The CBOW model created is fitted to the training data for it learn the weights and be able to predict any outcomes.
+ ```
+ cbow.fit(X_cbow, y_cbow, batch_size=64, epochs=500, verbose=1)
  
+ Epoch 1/500
+5/5 [==============================] - 3s 4ms/step - loss: 5.1366 - accuracy: 0.0000e+00
+Epoch 2/500
+5/5 [==============================] - 0s 4ms/step - loss: 5.1326 - accuracy: 0.0031
+Epoch 3/500
+5/5 [==============================] - 0s 4ms/step - loss: 5.1292 - accuracy: 0.0063
+....
+Epoch 498/500
+5/5 [==============================] - 0s 6ms/step - loss: 1.1477 - accuracy: 0.8176
+Epoch 499/500
+5/5 [==============================] - 0s 5ms/step - loss: 1.1440 - accuracy: 0.8176
+Epoch 500/500
+5/5 [==============================] - 0s 6ms/step - loss: 1.1403 - accuracy: 0.8176
+```
+**Note:** The accuracy of the model increases with number of `epochs`.
  
  
  
