@@ -127,7 +127,7 @@ plt.scatter(final_result[:,0], final_result[:,1])
 for i, word in enumerate(words):
     ax.annotate(word, xy = (final_result[i, 0], final_result[i, 1]))
 ```
-
+![](https://github.com/makam2901/NLP_CBOW/blob/master/pca.png)
  
  
  
