@@ -128,10 +128,30 @@ for i, word in enumerate(words):
     ax.annotate(word, xy = (final_result[i, 0], final_result[i, 1]))
 ```
 ![](https://github.com/makam2901/NLP_CBOW/blob/master/pca.png)
- 
- 
- 
- 
+
+**Note:** This is to only give a rough idea how PCA works. The training data and accuracy of the model needs to be increased in order to get related words close by in the plot.
+
+## Input Prompt
+```
+Enter the neighbouring words  : inability to new information  
+input_words =  ['inability to new information']
+```
+**Note:** The words entered in the prompt should be space seperated 
+## Output Function
+* First, the function converts the input words into their respective `indices` (tokens).
+```
+input_words =  ['inability to new information']
+input_tokens = tokenizer.texts_to_sequences(input_words)
+
+input_tokens: [[28, 5, 17, 12]]
+```
+* Using `cbow.predict()` we can get the softmax output of the input words.
+* Mapping the `max` of the softmax elements of the `cbow.predict()` with the words dictionary, we get our desired output.
+```
+Required target word: 
+transfer
+```
+
  
  
  
