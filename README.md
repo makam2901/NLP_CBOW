@@ -116,10 +116,51 @@ y_cbow[0] =  [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 
  0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.
  0. 0.]
  ```
- ### CBOW framework
- 
- ### Training 
- The CBOW model created is fitted to the training data for it learn the weights and be able to predict any outcomes.
+### CBOW framework
+```
+dim = 10
+cbow = Sequential()
+
+    
+cbow.add(Embedding(input_dim=V, 
+                   output_dim=dim,
+                   input_length = window_size*2, # Note that we now have 2L words for each input entry
+                   embeddings_initializer='glorot_uniform'))
+
+cbow.add(Lambda(lambda x: K.mean(x, axis=1), output_shape=(dim, )))
+
+cbow.add(Dense(V, activation='softmax', kernel_initializer='glorot_uniform'))
+
+cbow.compile(optimizer=keras.optimizers.Adam(),
+             loss='categorical_crossentropy',
+             metrics=['accuracy'])
+    
+cbow.summary()
+```
+* First, set the desired number of dimensions for the model to learn.
+* A sequential model with 3 layers: the Embedding layer, the Lambda layer and the Dense layer is created.
+* The optimizer used is `Adam`, which is an optimization technique for gradient descent.
+* The activation function used is `softmax`, which  converts vectors of numbers to vectors of probabilities. 
+```
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+embedding_1 (Embedding)      (None, 4, 10)             1700      
+_________________________________________________________________
+lambda_1 (Lambda)            (None, 10)                0         
+_________________________________________________________________
+dense_1 (Dense)              (None, 170)               1870      
+=================================================================
+Total params: 3,570
+Trainable params: 3,570
+Non-trainable params: 0
+_________________________________________________________________
+```
+
+### Training 
+* The CBOW model created is fitted to the training data for it learn the weights and be able to predict any outcomes.
+* Epochs represent the iterations and batch size is the number of training examples in one pass.
  ```
  cbow.fit(X_cbow, y_cbow, batch_size=64, epochs=500, verbose=1)
  
