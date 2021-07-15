@@ -182,6 +182,7 @@ Epoch 500/500
  
 ### PCA
 Principal Component Analysis (PCA) is a dimension reduction tool that can be used to reduce a large set of variables to a small set that still contains most of the information in the original set.
+* Embedding layer weights are accessed by using `cbow.get_weights()[0]` and stored them in `embedding`
 ```
 from sklearn.decomposition import PCA
 
