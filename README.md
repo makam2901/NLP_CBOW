@@ -31,6 +31,30 @@ The training data can be accessed through loading the `text.txt` file.
 file_name = 'text.txt'
 corpus = open(file_name).readlines()
 ```
+**Text:** 
+```Amnesia is a deficit in memory caused by brain damage or disease, but it can also be caused temporarily by the use of various sedatives and hypnotic drugs.  
+The memory can be either wholly or partially lost due to the extent of damage that was caused.  
+There are two main types of amnesia: retrograde amnesia and anterograde amnesia.   
+Retrograde amnesia is the inability to retrieve information that was acquired before a particular date, usually the date of an  
+accident or operation.  
+In some cases the memory loss can extend back decades, while in others the person may lose only a few months of memory.  
+Anterograde amnesia is the inability to transfer new information from the short-term store into the long-term store.  
+People with anterograde amnesia cannot remember things for long periods of time.  
+These two types are not mutually exclusive; both can occur simultaneously.  
+Case studies also show that amnesia is typically associated with damage to the medial temporal lobe.  
+In addition, specific areas of the hippocampus (the CA1 region) are involved with memory.  
+Research has also shown that when areas of the diencephalon are damaged, amnesia can occur.  
+Recent studies have shown a correlation between deficiency of RbAp48 protein and memory loss.  
+Scientists were able to find that mice with damaged memory have a lower level of RbAp48 protein compared to normal, healthy  
+mice.  
+In people suffering with amnesia, the ability to recall immediate information is still retained, and they may still be able   
+to form new memories.  
+However, a severe reduction in the ability to learn new material and retrieve old information can be observed.  
+Patients can learn new procedural knowledge.  
+In addition, priming (both perceptual and conceptual) can assist amnesiacs in the learning of fresh non-declarative knowledge.  
+Amnesic patients also retain substantial intellectual, linguistic, and social skill despite profound impairments in the  
+ability to recall specific information encountered in prior learning episodes.  
+```
 **Note:** Each sentence of the training data must in a new line when created via Notepad, Word ,etc.
 
 ### Data Preprocessing 
